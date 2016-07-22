@@ -1,5 +1,6 @@
 function Agent(island, model, eventLog, counter) {
   this.island = island;
+  this.home = island.code;
   this.position = null;
   this.model = model;
   this.id = Math.random();
