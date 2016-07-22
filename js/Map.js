@@ -49,10 +49,11 @@ var __POPULATION__ = {
 };
 
 var __ISLANDS__ = {
-  'A': ['Island A', '#4BACFF'],
-  'B': ['Island B', '#FFC32A'],
-  'C': ['Island C', '#F1958F'],
+  'A': ['Island A', 'hsl(208, 100%, 65%)'],
+  'B': ['Island B', 'hsl(43, 100%, 58%)'],
+  'C': ['Island C', 'hsl(4, 78%, 75%)'],
 };
+
 
 var __INITIAL_WORDS__ = {
   'A': 'zelere',
