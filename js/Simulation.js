@@ -11,6 +11,7 @@ class Simulation {
     window.__MODEL__ = model;
 
   }
+
   tick(){
     this.model.step();
     this.drawAgents();
@@ -25,12 +26,12 @@ class Simulation {
     var request = function () {
       requestAnimationFrame(function () {
         this.tick();
-        setTimeout(request, 300);
+        setTimeout(request, 500);
       }.bind(this));
     }.bind(this);
   
     request();
-  };
+  }
 
   drawAgents(){
     var model = this.model,
@@ -59,7 +60,11 @@ class Simulation {
       ].join('');
   
       circle.setAttribute('r', gridPixelSize / 2 - 2);
-      circle.setAttribute('fill', 'black');
+      //circle.setAttribute('fill', 'black');
+
+      circle.setAttribute('fill', __AGENT_COLORS__[agent.home][1]);
+      circle.setAttribute('stroke', "black");
+      circle.setAttribute('stroke-width', "1");
     });
   
     if (fragment.childElementCount) {
@@ -117,7 +122,8 @@ class Simulation {
       line.setAttribute('stroke', 'gray');
       canvas.appendChild(line);
     });
-  };
+  }
+
   drawGrid() {
     var model = this.model,
         canvas = this.canvas,
@@ -144,7 +150,7 @@ class Simulation {
       line.setAttribute('stroke', 'black');
       canvas.appendChild(line);
     }
-  };
+  }
 
   colorizeWord(instance) {
     var span = document.createElement('span');
