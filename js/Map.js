@@ -15,7 +15,7 @@ var __MAP__ = [
   '...AA.....AAAAAA=...............=BBBBBBBBBB........',
   '...AAAAAAAAAAA.AA..................BBBBBBBBBB......',
   '...AAAAAAAAAAAAAA...................BBBBBBBBB......',
-  '...AAAAAAAAAAAAA...................BBBBBBBBBB......',
+  '...AAAAAAAAAAAAA:..................BBBBBBBBBB......',
   '.......AAAAAAAA......................BBBBBB........',
   '.......AAAAAAA.....................BBBBBBB.........',
   '........AAAAAA.......................BBBBB.........',
@@ -24,7 +24,7 @@ var __MAP__ = [
   '........................................|..........',
   '...................................................',
   '.................CCC....CCC..CCC...................',
-  '.................CCCCC.CCCCC.CCC...................',
+  '................:CCCCC.CCCCC.CCC...................',
   '................CCCCCCCCCCCCCCCC...................',
   '.................CCCCCCCCCCCCCCC........|..........',
   '................CCCCCCCCCCCCCCCCCCCCCCCCCC.........',
@@ -43,8 +43,8 @@ var __MAP__ = [
 var WIDTH = 51;
 
 var __POPULATION__ = {
-  'A': 12,
-  'B': 12,
+  'A': 3,
+  'B': 24,
   'C': 12,
 };
 
@@ -52,6 +52,12 @@ var __ISLANDS__ = {
   'A': ['Island A', 'hsl(208, 100%, 65%)'],
   'B': ['Island B', 'hsl(43, 100%, 58%)'],
   'C': ['Island C', 'hsl(4, 78%, 75%)'],
+}
+
+var __AGENT_COLORS__ = {
+  'A': ['Island A', 'hsl(208, 100%, 25%)'],
+  'B': ['Island B', 'hsl(43, 100%, 38%)'],
+  'C': ['Island C', 'hsl(4, 78%, 45%)'],
 };
 
 
@@ -64,6 +70,7 @@ var __INITIAL_WORDS__ = {
 var __GATES__ = {
    '=': ['A', 'B'],
    '|': ['B', 'C'],
+   ':': ['A', 'C'],
 };
 
 function mooreNeighborhood(index) {
