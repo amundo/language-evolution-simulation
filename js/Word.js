@@ -11,7 +11,7 @@ class Word {
     return [ 'a', 'e', 'ı', 'i', 'u', 'ü', 'ö', 'o' ]
   }
 
-  static get CONSTS(){
+  static get CONSONANTS(){
     return [
       'b', 'c', 'd', 'f', 'g', 'ğ', 'h', 'j', 'k', 'l', 
       'm', 'n', 'p', 'r', 's', 'ş', 't', 'v', 'y', 'z'
@@ -29,7 +29,7 @@ class Word {
         if (Word.VOWELS.indexOf(prev[prev.length - 1]) === -1) {
           return prev + choiceRandom(Word.VOWELS);
         } else {
-          return prev + choiceRandom(Word.CONSTS);
+          return prev + choiceRandom(Word.CONSONANTS);
         }
       },
       island.prefix
@@ -50,7 +50,7 @@ class Word {
     var infix = (
       Word.VOWELS.indexOf(left[left.length - 1]) === -1
         ? choiceRandom(Word.VOWELS)
-        : choiceRandom(Word.CONSTS)
+        : choiceRandom(Word.CONSONANTS)
     );
   
     return new Word(
@@ -83,7 +83,7 @@ class Word {
   };
   
   mutateConst(island) {
-    return this.mutateWord(Word.CONSTS, island);
+    return this.mutateWord(Word.CONSONANTS, island);
   };
 }
 

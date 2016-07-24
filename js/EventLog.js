@@ -1,15 +1,21 @@
-function EventLog() {
-  this.events = [];
-  this.callback = function () {};
+
+class EventLog {
+  constructor(){
+    this.events = [];
+    this.callback = function () {};
+  }
+
+  onUpdate(callback){
+    this.callback = callback;
+  }
+  
+  add(eventType, instance){
+    this.events.push(eventType, instance);
+    this.callback(eventType, instance);
+  }
+  
+  static get NEW(){
+    return 1
+  }
+
 }
-
-EventLog.prototype.onUpdate = function (callback) {
-  this.callback = callback;
-};
-
-EventLog.prototype.add = function (eventType, instance) {
-  this.events.push(eventType, instance);
-  this.callback(eventType, instance);
-};
-
-EventLog.NEW = 1;
