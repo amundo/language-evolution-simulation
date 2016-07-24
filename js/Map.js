@@ -123,9 +123,7 @@ function getIslandCells(indicator, excludeGates) {
   );
 };
 
-function getIndicator(x, y) {
-  return __MAP__[y * WIDTH + x];
-}
+var getIndicator = (x,y) => __MAP__[y * WIDTH + x]
 
 function getGates(indicator) {
   var map = Array.prototype.map;
