@@ -27,7 +27,6 @@ class Model {
     })
   
     this.agents.forEach(agent => {
-      console.log(agent.island.code);
       agent.setup()
     });
   };

@@ -4,7 +4,6 @@ class Word {
     this.word = word;
     this.island = island;
     this.compoundOf = compoundOf;
-
   }
 
   static get VOWELS(){ 
@@ -17,6 +16,7 @@ class Word {
       'm', 'n', 'p', 'r', 's', 'ş', 't', 'v', 'y', 'z'
     ];
   }
+
   static random(length, island) {
     length = length || Math.floor(Math.random() * 10);
   

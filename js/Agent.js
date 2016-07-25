@@ -20,7 +20,7 @@ class Agent {
 
   static get LIVE(){ return 1 }
   static get DEAD(){ return 2 }
-  
+
   static get MUTATION_CHAIN(){
     return [
       [0.9, 'NO_MUTATION'],
